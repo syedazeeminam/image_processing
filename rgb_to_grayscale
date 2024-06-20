@@ -1,0 +1,22 @@
+#Conversion of RGB image to Grayscale
+
+#Import the Libraries 
+import matplotlib.pyplot as plt #Matplotlib for Visualization
+from skimage import data,color  # skimage for loading the data and conversion features
+
+#Make a function to display the image
+def show_image(image, title = 'Image', cmap_type = 'gray'):
+  plt.imshow(image, cmap = cmap_type)
+  plt.title(title)
+  plt.axis('off')
+  plt.show()
+
+# Load the builtin rocket image
+rocket = data.rocket()
+
+#Conversion of RGB rocket image into Grayscale 
+grayscaled_rocket = color.rgb2gray(rocket)
+
+#Display both the RGB and Grayscale images for analysis 
+show_image(rocket, 'Original Image')
+show_image(grayscaled_rocket, 'Grayscaled Converted Image')
